@@ -1,10 +1,9 @@
 FROM node:boron
+ 
+ADD scripts/install.sh .
 
-# Create app directory
-WORKDIR /usr/src/app
+RUN chmod +x install.sh
 
-RUN npm install
+CMD ./install.sh
 
 EXPOSE 8080
-
-CMD [ "npm", "start" ]
